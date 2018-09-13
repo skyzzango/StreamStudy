@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1b4749a-db1f-4c4f-97fe-a9cbcc0f3673" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/META-INF/StreamStudy.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/DayEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/Dish$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/Dish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/EnumEx01.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/StreamEx01$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/StreamEx01.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/stream/Dish$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/stream/Dish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/stream/StreamEx05.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/StreamEx01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stream/StreamEx05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stream/StreamEx05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +22,7 @@
     <session id="-1732527192">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.8" value="1" />
@@ -60,12 +45,13 @@
         <counts>
           <entry key="dummy" value="1" />
           <entry key="java" value="16772" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="16772" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.command.options" />
@@ -84,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="323">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -188,10 +174,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536812198770" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536812462931" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../JspExample01" />
     <property name="project.structure.last.edited" value="Project" />
@@ -279,12 +266,20 @@
       <updated>1536750791896</updated>
       <workItem from="1536750793278" duration="8733000" />
       <workItem from="1536797278479" duration="882000" />
-      <workItem from="1536798207728" duration="13062000" />
+      <workItem from="1536798207728" duration="13338000" />
     </task>
+    <task id="LOCAL-00001" summary="Study02 - master">
+      <created>1536812271428</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536812271428</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22677000" />
+    <option name="totallyTimeSpent" value="22953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2599" y="0" width="1248" height="1047" extended-state="0" />
@@ -332,6 +327,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Study02 - master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Study02 - master" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java" />
@@ -402,8 +401,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="323">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>
