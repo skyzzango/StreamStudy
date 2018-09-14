@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1b4749a-db1f-4c4f-97fe-a9cbcc0f3673" name="Default Changelist" comment="Study04 - master">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/DayEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/com/company/EnumEx01.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/stream/Dish$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/stream/Dish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StreamStudy/stream/StreamEx05.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stream/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stream/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stream/StreamEx05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stream/StreamEx05.java" afterDir="false" />
+    <list default="true" id="b1b4749a-db1f-4c4f-97fe-a9cbcc0f3673" name="Default Changelist" comment="Study05 - master">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,13 +50,13 @@
         <counts>
           <entry key="dummy" value="6" />
           <entry key="java" value="36055" />
-          <entry key="txt" value="22" />
+          <entry key="txt" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="36055" />
-          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.command.options" />
@@ -109,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stream/StreamEx06.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="133">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,8 +167,8 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="297" />
-    <option name="y" value="26" />
+    <option name="x" value="519" />
+    <option name="y" value="17" />
     <option name="width" value="1401" />
     <option name="height" value="1007" />
   </component>
@@ -242,10 +234,11 @@
   <component name="PropertiesComponent">
     <property name="GO_FMT" value="true" />
     <property name="SONARLINT_ISSUES_SPLIT_PROPORTION" value="0.58144796" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536929736445" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536930036095" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../JspExample01" />
     <property name="project.structure.last.edited" value="Project" />
@@ -372,7 +365,7 @@
       <workItem from="1536821631267" duration="19823000" />
       <workItem from="1536887590799" duration="8711000" />
       <workItem from="1536898239153" duration="1979000" />
-      <workItem from="1536907813303" duration="18350000" />
+      <workItem from="1536907813303" duration="18571000" />
     </task>
     <task id="LOCAL-00001" summary="Study02 - master">
       <created>1536812271428</created>
@@ -381,14 +374,22 @@
       <option name="project" value="LOCAL" />
       <updated>1536812271428</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Study05 - master">
+      <created>1536929804221</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536929804221</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72127000" />
+    <option name="totallyTimeSpent" value="72348000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="297" y="26" width="1401" height="1007" extended-state="0" />
+    <frame x="519" y="17" width="1401" height="1007" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21567164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -436,7 +437,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Study02 - master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Study02 - master" />
+    <MESSAGE value="Study05 - master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Study05 - master" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java" />
@@ -544,8 +546,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stream/StreamEx06.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="133">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
