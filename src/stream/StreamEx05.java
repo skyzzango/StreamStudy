@@ -1,6 +1,11 @@
 package stream;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.IntSupplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -8,18 +13,10 @@ import java.util.stream.Stream;
 import static java.util.Comparator.comparing;
 
 public class StreamEx05 {
+
 	public static void main(String[] args) {
-		List<Dish> menu = Arrays.asList(
-				new Dish("pork", false, 200, Dish.Type.MEAT),
-				new Dish("beef", false, 300, Dish.Type.MEAT),
-				new Dish("chicken", false, 400, Dish.Type.MEAT),
-				new Dish("french", true, 500, Dish.Type.OTHER),
-				new Dish("rice", true, 500, Dish.Type.OTHER),
-				new Dish("season fruit", true, 500, Dish.Type.OTHER),
-				new Dish("pizza", true, 500, Dish.Type.OTHER),
-				new Dish("prawns", true, 500, Dish.Type.FISH),
-				new Dish("salmon", true, 600, Dish.Type.FISH)
-		);
+
+		List<Dish> menu = Dish.createMenu();
 
 		/* 5.1 필터링과 슬라이싱
 		 *   5.1.1 프레디케이트로 필터링
@@ -173,7 +170,7 @@ public class StreamEx05 {
 		 *       : 답 - filter 를 프리디케이트와 함께 사용하면 스트림의 요소를 필터링 할 수 있다.
 		 *       : flatMap 을 실행하면 숫자 쌍을 포함하는 int[] 스트림이 반환되므로
 		 *       프레디케이트를 이용해서 숫자 쌍의 합이 3으로 나누어 쩔어지는지 확인 할 수 있다.*/
-		System.out.println("\nQuiz03: 이전 문제에서 합이 3으로 나누어 떨어지는 쌍만 반환 하시오.");
+		System.out.println("\nQuiz4673: 이전 문제에서 합이 3으로 나누어 떨어지는 쌍만 반환 하시오.");
 		List<int[]> pairs2 = numbers3.stream()
 				.flatMap(
 						i -> numbers4.stream()
@@ -424,7 +421,7 @@ public class StreamEx05 {
 				.collect(Collectors.toSet());
 		System.out.println(result2);
 
-		System.out.println("\nQuiz03: 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하시오.");
+		System.out.println("\nQuiz4673: 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하시오.");
 		List<String> result3 = transactions.stream()
 				.map(Transaction::getTrader)
 				.filter(trader -> trader.getCity().equals("Cambridge"))
@@ -591,8 +588,8 @@ public class StreamEx05 {
 		pythagoreanTriples.forEach(t -> System.out.println(Arrays.toString(t)));
 
 		/* 5.7 스트림 만들기
-		*   1. 값으로 스트림 만들기
-		*       : 임의의 수를 인수로 받는 정적 메서드 Stream.of 를 이용해서 스트림을 만들 수 있다.*/
+		 *   1. 값으로 스트림 만들기
+		 *       : 임의의 수를 인수로 받는 정적 메서드 Stream.of 를 이용해서 스트림을 만들 수 있다.*/
 
 		// Stream.of 으로 스트림을 만드는 예제
 		System.out.println("\n값으로 스트림 만드는 코드");
@@ -603,19 +600,108 @@ public class StreamEx05 {
 		Stream<String> empthStream = Stream.empty();
 
 		/* 2. 배열로 스트림 만들기
-		*   : 배열을 인수로 받는 정적 메서드 Arrays.stream 을 이용해서 스트림 만들 수 있음*/
+		 *   : 배열을 인수로 받는 정적 메서드 Arrays.stream 을 이용해서 스트림 만들 수 있음*/
 
 		// 기본형 int 로 이루어진 배열을 IntStream 으로 변환하는 예제
 		int[] numbers = {2, 3, 5, 7, 11, 13};
 		int sum3 = Arrays.stream(numbers).sum();
-		System.out.println("\n배열을 스트림으로 만들기: " + sum3);
+		System.out.println("\n배열을 스트림으로 만든 후 합계: " + sum3);
 
 		/* 3. 파일로 스트림 만들기
-		*   : 파일 처리 등의 I/O 연산에 NIO API(비블록 I/O)도 스트림 API 를 활용할 수 있음.
-		*       - Files.lines 로 파일의 각 행 요소를 반환하는 스트림 얻음.
-		*       : split 메서드로 각 행의 단어 분리
-		*       : flatMap 을 이용해서 각 행 단어를 여러 스트림으로 만드는 것이 아니라 하나로 평면화*/
+		 *   : 파일 처리 등의 I/O 연산에 NIO API(비블록 I/O)도 스트림 API 를 활용할 수 있음.
+		 *       - Files.lines 로 파일의 각 행 요소를 반환하는 스트림 얻음.
+		 *       : split 메서드로 각 행의 단어 분리
+		 *       : flatMap 을 이용해서 각 행 단어를 여러 스트림으로 만드는 것이 아니라 하나로 평면화*/
 
+		long uniqueWords = 0;
+		try (Stream<String> lines = Files.lines(Paths.get("../hello.txt"), Charset.defaultCharset())) {
+			uniqueWords = lines.flatMap(line -> Arrays.stream(line.split(" ")))
+					.distinct()
+					.count();
+		} catch (IOException e) {
+			System.out.println("\nError: Files.lines Exception");
+		}
+		System.out.println("\n파일로 단어 스트림 만든 후 카운트: " + uniqueWords);
+
+		/* 4. 함수로 무한 스트림 만들기
+		 *   : 스트림 API 는 함수에서 스트림을 만들 수 있는 두개의 정적 메서드 제공
+		 *       - Stream.iterate
+		 *       - Stream.generate
+		 *   : 두 연산을 이용하여 무한 스트림 (고정되지 않은 스트림) 생성 가능
+		 *   : 두 연산은 요청할 때마다 주어진 함수를 이용해서 값을 생성
+		 *   : 보통 무한한 값을 출력하지 않도록 limit(n) 함수 연결하여 사용
+		 *   : 무한 스트림의 요소는 무한적으로 계산이 반복되기 때문에 정렬이나 리듀스 할 수 없음.*/
+
+		/* 4.1 iterate
+		 *   : 초깃값과 람다를 인수로 받아서 새로운 값 끝없이 생상
+		 *   : 기본적으로 기존 결과에 의존해서 순차적으로 연산 수행
+		 *   : 무한 스트림(infinite stream), 언바운드 스트림(unbounded stream)
+		 *       - 스트림과 컬렉션의 가장 큰 차이점*/
+
+		// 예제보기
+		System.out.println("\nEx01: 피보나치 수열 집합 예제");
+		Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], + t[0] + t[1]})
+				.limit(20)
+				.forEach(t -> System.out.println("(" + t[0] + ", " + t[1] + ")"));
+
+		System.out.println("\nEx02: 피보나치 수열 예제");
+		Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
+				.limit(20)
+				.map(t -> t[0])
+				.forEach(System.out::println);
+
+		/* 4.2 generate
+		*   : 요구할 때 값을 계산하는 무한 스트림 생성 가능
+		*   : iterate 와는 달리 생성된 각 값을 연속적으로 계산하지 않음
+		*   : Supplier<T> 를 인수로 받아서 새로운 값 생산
+		*   : Supplier<T> 공급자는 상태가 있는 메서드일 수도, 없는 메서드일 수도 있다.
+		*   : 예제의 공급자(메서드 레퍼런스 Math.random)는 상태가 없는 메서드이다.
+		*   (상태가 없는 메서드 : 나중에 계산에 사용할 어떤 값도 저장해두지 않음)
+		*   : 병렬 코드에서는 공급자에 상태가 있으면 안전하지 않다.
+		*   : 따라서 상태를 갖는 공급자는 실제로 피하는 것이 좋다.*/
+
+		// 무한 스트림을 생성하는 코드
+		// Supplier<T> 대신 IntSupplier 를 인수로 받은
+		IntStream ones1 = IntStream.generate(() -> 1);
+
+		// 람다
+		IntStream ones = IntStream.generate(() -> 1);
+
+		// 익명 클래스
+		/* 람다와 익명 클래스는 비슷한 연산을 하지만
+		*   익명 클래스에서 getAsInt 메서드의 연산을 커스터마이즈할 수 있는
+		*   상태 필드 정의가 가능하다. 람다는 상태를 바꾸지 않는다.*/
+		IntStream twos = IntStream.generate(new IntSupplier() {
+			@Override
+			public int getAsInt() {
+				return 1;
+			}
+		});
+
+		// 피보나치 수열
+		/*
+			-> 기존의 수열 상태를 저장하고 getAsInt로 다음 요소를 계산할 수 있도록 IntSupplier 만들어야 함.
+			다음에 호출될 때는 IntSupplier 의 상태를 갱신할 수 있어야 함.
+			iterate 사용했을 때는 각 과정에서 새로운 값 생성하면서 기존 상태를 바꾸지 않음.
+			(순수한 불변 상태 유지)
+		 */
+
+		/* 요약
+		*   1. 스트림 API 를 이용하면 복잡한 데이터 처리 질의를 표현할 수 있다.
+		*   2. filter, distinct, skip, limit 메서드로 스트림을 필터링하거나 자를 수 있다.
+		*   3. map, flatMap 메서드로 스트림의 요소를 추출하거나 변환할 수 있다.
+		*   4. findFirst, findAny 메서드로 스트림의 요소를 검색할 수 있다.
+		*       allMatch, noneMatch, anyMatch 메서드를 이용해서
+		*       주어진 프레디케이트와 일치하는 요소를 스트림에서 검색할 수 있다.
+		*   5. reduce 메서드로 스트림의 모든 요소를 반복
+		*   6. filter, map 등은 상태를 저장하지 않는 상태 없는 연산이다.
+		*       reduce 는 상태를 저장한다. -> 상태 있는 연산
+		*       sorted, distinct 등은 새로운 스트림을 반환하기 전에
+		*       스트림의 모든 요소를 버퍼에 저장한다. -> 상태 있는 연산
+		*   7. 기본형 특화 스트림 IntStream, DoubleStream, LongStream
+		*   8. 컬렉션뿐 아니라 값, 배열, 파일, iterate 와 generate 같은 메서드로도
+		*   스트림 생성 가능하다.
+		*   9. 무한 스트림 */
 
 	}
 }
