@@ -394,18 +394,7 @@ public class StreamEx05 {
 		 *   8. 전체 트랜젝션 중 최소값은 얼마인가?*/
 
 		/* 5.5.1 거래자와 트랜잭션*/
-		Trader raoul = new Trader("Raoul", "Cambridge");
-		Trader mario = new Trader("Mario", "Milan");
-		Trader alan = new Trader("Alan", "Cambridge");
-		Trader brian = new Trader("Brian", "Combridge");
-
-		List<Transaction> transactions = Arrays.asList(
-				new Transaction(brian, 2011, 300),
-				new Transaction(raoul, 2012, 1000),
-				new Transaction(raoul, 2011, 400),
-				new Transaction(mario, 2012, 710),
-				new Transaction(alan, 2012, 950)
-		);
+		List<Transaction> transactions = Transaction.createTransaction();
 
 		System.out.println("\n5.5 실전연습");
 		System.out.println("Quiz01: 2011년에 일어난 모든 트랜잭션을 찾아 값을 오름차순으로 정리하시오.");

@@ -32,17 +32,19 @@ public class Dish {
 		return calories;
 	}
 
-	@Override
-	public String toString() {
-		return name;
-	}
-
 	public Type getType() {
 		return type;
 	}
 
+	@Override
+	public String toString() {
+		return "Dish{" +
+				"name='" + name + '\'' +
+				'}';
+	}
+
 	public static List<Dish> createMenu() {
-		List<Dish> menu = Arrays.asList(
+		return Arrays.asList(
 				new Dish("pork", false, 200, Dish.Type.MEAT),
 				new Dish("beef", false, 300, Dish.Type.MEAT),
 				new Dish("chicken", false, 400, Dish.Type.MEAT),
@@ -53,6 +55,5 @@ public class Dish {
 				new Dish("prawns", true, 500, Dish.Type.FISH),
 				new Dish("salmon", true, 600, Dish.Type.FISH)
 		);
-		return menu;
 	}
 }
